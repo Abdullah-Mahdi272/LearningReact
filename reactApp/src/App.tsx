@@ -1,7 +1,8 @@
 // import ListGroup from "./components/ListGroup";
 import Alert from "./components/Alert";
-import AlertWithButton from "./components/AlertWithButton";
 import Button from "./components/Button";
+
+import { useState } from "react";
 // function App() {
 //   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
 
@@ -25,10 +26,18 @@ import Button from "./components/Button";
 // }
 
 function App() {
+  const [alertVisible, setAlertVisibility] = useState(false);
   return (
     <div>
-      <Alert>My Alert</Alert>
-      <Button color="dark" functionality={() => {}}>
+      {alertVisible && (
+        <Alert onClose={() => setAlertVisibility(false)}>My Alert</Alert>
+      )}
+      <Button
+        color="dark"
+        functionality={() => {
+          setAlertVisibility(true);
+        }}
+      >
         My Button
       </Button>
     </div>

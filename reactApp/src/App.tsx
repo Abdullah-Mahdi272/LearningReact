@@ -1,6 +1,7 @@
 // import ListGroup from "./components/ListGroup";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
+import mainPage from "./mainPage";
 
 import { useState } from "react";
 // function App() {
@@ -40,6 +41,8 @@ function App() {
       >
         My Button
       </Button>
+
+      <mainPage></mainPage>
     </div>
   );
 }
